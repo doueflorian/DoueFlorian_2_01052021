@@ -1,4 +1,4 @@
-/* FONTS AND COLOR CODES */
+/* GENERAL FONTS AND COLOR CODES */
 
 @font-face {
     font-family: 'Raleway';
@@ -17,15 +17,10 @@ strong
     font-weight: bold;
 }
 
-h1
+h1, h2
 {
     font-size: medium;
-}
-
-h2
-{
-    font-weight: normal;
-    font-size: small;
+    font-weight: bold;
 }
 
 a
@@ -36,18 +31,28 @@ a
 }
 
 
-/* SECTIONS CODEs */
-
-header
-{
-
-}
+/* SECTION CODES */
 
 body
 {
     background-color: white;
     font-family: 'Raleway';
 }
+
+
+/* HEADER */
+
+header
+{
+
+}
+
+header h2
+{
+    font-weight: normal;
+    font-size: small;
+}
+
 
 #topnav
 {
@@ -59,20 +64,48 @@ body
     border: none;
 }
 
+/* . Hebergements */
+
 #hebergements
 {
 
 }
+
+#hebergements h2
+{
+
+}
+
+#hebergements h3
+{
+    font-size: medium;
+}
+
+/* . Populaires */
 
 #populaires
 {
 
 }
 
-#activités
+#populaires h3
+{
+    font-size: medium;
+}
+
+/* . Activités */
+
+#activites
 {
 
 }
+
+#activites h3
+{
+    font-size: medium;
+}
+
+/* . Footer */
 
 footer
 {
@@ -82,17 +115,22 @@ footer
 
 /* IMAGES CODES */
 
-.imgsearch
+#hebergements img
 {
     width: 10em;
     height: 6em;
 }
 
-.imgsact
+#populaires img
 {
     width: 10em;
     height: 6em;
-    overflow: hidden
+}
+
+#activites img
+{
+    width: 10em;
+    height: 6em;
 }
 
 #logoreservia
