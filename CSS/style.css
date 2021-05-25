@@ -37,15 +37,12 @@ body
 {
     background-color: white;
     font-family: 'Raleway';
+    max-width: 70%;
+    margin: auto;
 }
 
 
 /* HEADER */
-
-header
-{
-
-}
 
 header h2
 {
@@ -53,16 +50,140 @@ header h2
     font-size: small;
 }
 
+#pagetop
+{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+ }
 
 #topnav
 {
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+#topnav a
+{
+    color: #0065FC ;
+    font-weight: bolder;
+        padding: 0px 25px 0px 25px;
+}
+
+#topnav a:hover
+{
+    border-top: 1px solid #0065FC;
+    padding-top: 33px;
+}
+
+#topnav a:visited
+{
+    color: grey;
+} 
+
+#topsearch
+{
+    margin-top: 30px;
+}
+
+#searchbutton
+{
+    display: flex;
+    align-items: center;
+}
+
+#searchbutton button:first-child
+{
+    color: black;
+    width: 40px;
+    height: 40px;
+    background-color: #F2F2F2;
+    border-radius: 10px 0px 0px 10px;
+    border: none;
+}
+
+.fa-map-marker-alt
+{
+    color: black;
+}
+
+#searchbutton input
+{
+    height: 40px;
+    width: 160px;
+}
+
+#searchbutton button:last-child
+{
+    color: white;
+    font-weight: bolder;
+    background-color: #0065FC;
+    height: 40px;
+    border: none;
+    border-radius: 0px 10px 10px 0px;
+}
+
+#searchbutton button:last-child:hover
+{
+    color: white ;
+    font-weight: bolder;
+    background-color: #DEEBFF ;
+    height: 40px;
+    border: none;
+    border-radius: 0px 10px 10px 0px;
+}
+
+#searchfilters
+{
+    display: flex;
+    align-items: baseline;
+}
+
+#searchfilters ul
+{
+    display: flex;
+    justify-content: space-between;
+
+}
+
+#searchfilters button
+{
+    margin-right: 10px;
+    background-color: #DEEBFF;
+    border: none;
+    border-radius: 20px;
+    width: 40px;
+    height: 40px;
+}
+
+#searchfilters li
+{
+    margin-right: 20px;
+    padding-right: 10px;
+    align-content: center;
+    border: 1px solid #F2F2F2;
+    border-radius: 20px ;
+    font-weight: bold;
     
 }
 
-#search
+#searchfilters li:hover
 {
-    border: none;
+    background-color:  #DEEBFF;
 }
+
+.transbutton
+{
+    border: 1px solid #f2f2f2;
+    background-color: transparent;
+    border-radius: 20px;
+    width: 30px;
+    height: 30px;
+}
+
 
 /* . Hebergements */
 
@@ -115,19 +236,19 @@ footer
 
 /* IMAGES CODES */
 
-#hebergements img
+.hebergcard img
 {
     width: 10em;
     height: 6em;
 }
 
-#populaires img
+.popcard img
 {
     width: 10em;
     height: 6em;
 }
 
-#activites img
+.actcard
 {
     width: 10em;
     height: 6em;
@@ -135,8 +256,8 @@ footer
 
 #logoreservia
 {
-    width: 6em;
-    height: 3em;
+    width: 5em;
+    height: 2.5em;
 }
 
 i
@@ -144,12 +265,12 @@ i
    color: #0065FC;
 }
 
-#igrey
+.igrey
 {
     color: #f2f2f2;
 }
 
-#iblack
+.iblack
 {
     color: black;
 }
