@@ -2,7 +2,7 @@
 
 @font-face {
     font-family: 'Raleway';
-    src: url(/CSS/Font/Raleway/Raleway-VariableFont_wght.ttf); 
+    src: url(Font/Raleway/Raleway-VariableFont_wght.ttf); 
       
         }
 
@@ -26,7 +26,6 @@ a
 
 .hebergcard span, .popcard span /* Prices Style */
 {
-    font-size: 1.1em;
     font-weight: bold;
 }
 
@@ -41,58 +40,61 @@ body
 
 #blocpage
 {
-    width: 1150px;
+    max-width: 1340px;
     margin: auto;
 }
 
 /* HEADER */
 
+header
+{
+    padding: 0 1em 0 0 ;
+}
+
 header h1
 {
-    font-size: 1.2em;
-    line-height: 5px;
+    font-size: 1.4em;
+    line-height: 0.5em;
 }
 
 header h2
 {
     font-weight: normal;
-    font-size: 0.8em;
+    font-size: 1em;
 }
 
 #pagetop
 {
-    margin: 30px 0 30px 0;
+    margin: 40px 0 40px 0;
     display: flex;
     justify-content: space-between;
- }
 
-#topnav
-{
-    font-size: 14px;
-    display: flex;
-    justify-content: space-between;
 }
-
-
 
 #topnav a
 {
-    color: #0065FC ;
-    font-weight: bolder;
     padding: 0px 25px 0px 25px;
 }
 
-#topnav a:hover
+#topnav  a[title="hebergements"]
 {
-    color: #DEEBFF ;
-    border-top: 1px solid #0065FC;
-    padding-top: 43px;
+    color: #0065FC ;
+    border-top: 2px solid #0065FC;
+    padding-top: 38px;
+    font-weight: normal;
 }
 
-/* #topnav a:visited
+#topnav  a[title="activites"]
 {
     color: grey;
-} */
+}
+
+#pagetop a[title="sinscrire"]
+{
+    color: #0065FC ;
+    font-weight: bolder;
+
+}
 
 #topsearch
 {
@@ -103,28 +105,29 @@ header h2
 {
     display: flex;
     align-items: center;
+    margin-bottom: 20px;
 }
 
 #searchbutton button:first-child
 {
     color: black;
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     background-color: #F2F2F2;
-    border-radius: 10px 0px 0px 10px;
+    border-radius: 1em 0 0 1em;
     border: none;
 }
 
 .fa-map-marker-alt
 {
     color: black;
-    font-size: 1.1em;
+    font-size: 1.5em;
 }
 
 #searchbutton input
 {
-    height: 40px;
-    width: 200px;
+    height: 50px;
+    width: 240px;
     border: 1px solid #F2F2F2;
 }
 
@@ -136,18 +139,20 @@ header h2
 #searchbutton ::placeholder
 {
     font-weight: bold;
+    font-size: 1.2em;
 }
 
 #searchbutton button:last-child
 {
     color: white;
-    font-weight: bolder;
-    font-size: 0.9em;
+    font-weight: bold;
+    font-family: 'raleway';
+    font-size: 1em;
     background-color: #0065FC;
-    height: 40px;
-    width: 110px;
+    height: 50px;
+    width: 120px;
     border: none;
-    border-radius: 0px 10px 10px 0px;
+    border-radius: 0 1em 1em 0;
     cursor: pointer;
 }
 
@@ -156,7 +161,6 @@ header h2
     color: white ;
     font-weight: bolder;
     background-color: #DEEBFF ;
-    height: 40px;
     border: none;
     border-radius: 0px 10px 10px 0px;
 }
@@ -171,6 +175,8 @@ header h2
 {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
+    row-gap: 1em;
 
 }
 
@@ -179,38 +185,50 @@ header h2
     margin-right: 10px;
     background-color: #DEEBFF;
     border: none;
-    border-radius: 20px;
-    width: 40px;
-    height: 40px;
+    border-radius: 2em;
+    width: 50px;
+    height: 50px;
+}
+
+#searchfilters i
+{
+    font-size: 1.2em;
 }
 
 #searchfilters li
 {
     margin-right: 20px;
-    padding-right: 10px;
+    padding-right: 20px;
     align-content: center;
-    border: 1px solid #F2F2F2;
-    border-radius: 20px ;
+    border: 3px solid #F2F2F2;
+    border-radius: 2em;
     font-weight: bold;
+    font-size: 1.2em;
     user-select: none
  
+}
+
+#searchfilters li > button
+{
+    margin: -3px 6px -3px -3px;
 }
 
 #searchfilters li:hover
 {
     background-color:  #DEEBFF;
+    border: 3px solid #DEEBFF;
     transition-duration: 0.2s;
 }
 
 .transbutton
 {
-    border: 1px solid #f2f2f2;
+    border: 1px solid rgba(203,209,209, 0.8);
     background-color: transparent;
-    border-radius: 20px;
-    width: 30px;
-    height: 30px;
+    border-radius: 2em;
+    width: 25px;
+    height: 25px;
+    margin-right: 1em;
 }
-
 
 /* Flex heberg + Pop */
 
@@ -218,6 +236,8 @@ header h2
 {
     display: flex;
     justify-content: space-between;
+    column-gap: 3em;
+    margin-top: 40px;
 }
 
 /* . Hebergements */
@@ -225,20 +245,34 @@ header h2
 #hebergements
 {
     background-color: #f2f2f2;
-    border-radius: 20px;
-    padding: 20px;
-    width: 720px;
+    border-radius: 1.2em;
+    padding: 1.2em;
+    flex: 3 0 0;
+    position: relative;
 }
 
 #hebergements h2
 {
-    font-size: 20px;
+    font-size: 1.4em;
+    padding-left: 1.2em;
+}
+
+
+#hebergements a[title="afficher plus"]
+{
+    font-weight: bold;
+    position: absolute;
+    font-size: 1em;
+    bottom: 2em;
+    padding-left: 2em;
 }
 
 .hebergflex
 {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-around;
+    row-gap: 2em;
 }
 
 .hebergcard
@@ -246,21 +280,25 @@ header h2
     display: flex;
     flex-direction: column;
     background-color: white;
-    border: 5px solid white;
+    border: 4px solid white;
     border-radius: 20px;
-    width: 200px;
-    height: 160px;
-    box-shadow:0px 0px 5px grey;
-    margin: 15px;
+    width: 240px;
+    height: 180px;
+    box-shadow: 5px 5px 5px rgba(203,209,209, 0.6);
     line-height: 0.4em;
     overflow: hidden;
- }
+}
 
 .hebergcard img
 {
     object-fit: cover;
     min-height: 0;
     flex: 1 0 60%;
+}
+
+.hebergcard div
+{ 
+    padding-bottom: 1em;
 }
 
 .hebergcard h3, .hebergcard p, .hebergcard .stars
@@ -270,19 +308,18 @@ header h2
 
 .hebergcard h3
 {
-    margin-bottom: 0.2em;
-    font-size: 12px;
+    font-size: 1em;
 }
 
 .hebergcard p
 {
-    font-size: 10px;
+    font-size: 0.9em;
 }
 
 .hebergcard:hover
 {
     background-color: #DEEBFF;
-    border: 5px solid  #DEEBFF;
+    border: 4px solid  #DEEBFF;
 }
 
 .hebergcard:hover > img
@@ -299,8 +336,8 @@ header h2
     background-color: #f2f2f2;
     border-radius: 20px;
     padding: 20px;
-    width: 300px;
     position: relative;
+    flex: 1 0 0;
 }
 
 #populaires h2
@@ -320,6 +357,7 @@ header h2
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    row-gap: 2em;
 }
 
 .popcard
@@ -327,11 +365,11 @@ header h2
     display: flex;
     background-color: white;
     border-radius: 20px;
-    width: 250px;
-    height: 120px;
-    border: 5px solid white;
-    box-shadow: 0px 0px 5px grey;
-    margin: 15px;
+    width: 320px;
+    height: 140px;
+    border: 4px solid white;
+    box-shadow: 5px 5px 5px rgba(203,209,209, 0.3);
+
     overflow: hidden;
     position: relative;
 }
@@ -347,13 +385,12 @@ header h2
 
 .popcard h3
 {
-    font-size: 12px;
-    margin-bottom: 0px;
+    font-size: 1em;
 }
 
 .popcard p
 {
-    font-size: 10px;
+    font-size: 0.9em;
 }
 
 .popcard .stars
@@ -365,7 +402,7 @@ header h2
 .popcard:hover
 {
     background-color: #DEEBFF;
-    border: 5px solid  #DEEBFF; 
+    border: 4px solid  #DEEBFF; 
 }
 
 .popcard:hover > img
@@ -380,7 +417,7 @@ header h2
 
 #activites
 {
-
+    margin-top: 40px;
 }
 
 #activites h2
@@ -394,17 +431,17 @@ header h2
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: space-between;
-    height: 350px;
+    height: 450px;
 }
 
 .actcard
 {
-    width: 250px;
+    width: 300px;
     display: flex;
     flex-direction: column;
     background-color: white;
     border-radius: 20px;
-    box-shadow:0px 0px 5px grey;
+    box-shadow: 5px 5px 5px rgba(203,209,209, 0.3) ;
     overflow: hidden;  
 }
 
@@ -415,12 +452,12 @@ header h2
 
 .actcard:nth-child(2)
 {
-    flex: 0 0 60%;
+    flex: 0 0 50%;
 }
 
 .actcard:nth-child(3)
 {
-    flex: 0 0 30%;
+    flex: 0 0 40%;
 }
 
 .actcard:nth-child(4)
@@ -445,7 +482,7 @@ header h2
 
 .actcard h3
 {
-    font-size: 12px;
+    font-size: 1.2em;
     padding-left: 15px;
 }
 
@@ -466,11 +503,11 @@ header h2
 footer
 {
     background-color: #F2F2F2;
-    width: 1300px;
+    max-width: 1440px;
     margin: auto;
     display: grid;
     grid-template-columns: 400px 350px 400px;
-    grid-gap: 10px;
+    grid-gap: 50px;
     grid-auto-rows: auto;
     margin-top: 20px;
     padding: 20px 0 20px 0;
@@ -484,22 +521,22 @@ footer ul
 
 footer h3, footer ul
 {
-    padding: 0px 0 0px 80px;
-    font-size: small;
+    padding: 0 0 0 50px;
+    font-size: 1em;
 }
 
 /* IMAGES CODES */
 
 .hebergcard i, .popcard i /* Cards Stars Style */
 {
-    font-size: 0.5em;
+    font-size: 0.75em;
     padding-left: 1px;
 }
 
 #logoreservia
 {
-    width: 5em;
-    height: 2.5em;
+    width: 6em;
+    height: 3em;
 }
 
 i
