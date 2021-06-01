@@ -30,31 +30,52 @@ a
 }
 
 
+/* IMAGES CODES */
+
+#logoreservia
+{
+    width: 6em;
+    height: 3em;
+}
+
+.hebergcard i, .popcard i /* Cards Stars Style */
+{
+    font-size: 0.75em;
+    padding-left: 1px;
+}
+
+i
+{
+   color: #0065FC;
+}
+
+.igrey
+{
+    color: #f2f2f2;
+}
+
+ul
+{
+    list-style: none;
+}
+
+
+
 /* SECTION CODES */
 
 body
 {
     background-color: white;
     font-family: 'Raleway';
-}
-
-#blocpage
-{
-    max-width: 1340px;
-    margin: auto;
+    margin: 0;
 }
 
 /* HEADER */
 
-header
-{
-    padding: 0 1em 0 0 ;
-}
-
 header h1
 {
     font-size: 1.4em;
-    line-height: 0.5em;
+    margin-bottom: 0.2em;
 }
 
 header h2
@@ -65,35 +86,53 @@ header h2
 
 #pagetop
 {
-    margin: 40px 0 40px 0;
-    display: flex;
-    justify-content: space-between;
-
+    display: grid;
+    grid-template-areas: "logo nothing nav sign";
+    grid-template-columns: 100px 1fr 300px 200px;
+    grid-template-rows: 65px;
+    align-items: end;
+    margin-top: 0px;
+    margin-bottom: 40px;
 }
 
-#topnav a
+#logoreservia
 {
-    padding: 0px 25px 0px 25px;
+    grid-area: logo;
 }
 
-#topnav  a[title="hebergements"]
+#nav
+{
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    grid-area: nav;
+}
+
+a[title="hebergements"]
 {
     color: #0065FC ;
     border-top: 2px solid #0065FC;
-    padding-top: 38px;
+    padding: 45px 20px 0 20px;
+    text-align: center;
     font-weight: normal;
+
 }
 
-#topnav  a[title="activites"]
+a[title="activites"]
 {
+    padding: 45px 20px 0 20px;
     color: grey;
+    text-align: center;
+
 }
 
 #pagetop a[title="sinscrire"]
 {
     color: #0065FC ;
-    font-weight: bolder;
 
+    text-align: center;
+    font-weight: bolder;
+    grid-area: sign;
 }
 
 #topsearch
@@ -101,10 +140,15 @@ header h2
     margin-top: 20px;
 }
 
+#searchbutton .submiticon
+{
+    display: none;
+}
+
+
 #searchbutton
 {
     display: flex;
-    align-items: center;
     margin-bottom: 20px;
 }
 
@@ -159,25 +203,29 @@ header h2
 #searchbutton button:last-child:hover
 {
     color: white ;
-    font-weight: bolder;
     background-color: #DEEBFF ;
-    border: none;
-    border-radius: 0px 10px 10px 0px;
 }
 
 #searchfilters
 {
     display: flex;
     align-items: baseline;
+    flex-wrap: wrap;
+
+}
+
+#searchfilters h3
+{
+    margin-right: 40px;
 }
 
 #searchfilters ul
 {
     display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
-    row-gap: 1em;
-
+    row-gap: 0.5em;
+    column-gap: 1.5em;
+    padding-left: 0px;
 }
 
 #searchfilters button
@@ -197,15 +245,14 @@ header h2
 
 #searchfilters li
 {
-    margin-right: 20px;
-    padding-right: 20px;
+    
+    padding-right: 15px;
     align-content: center;
     border: 3px solid #F2F2F2;
     border-radius: 2em;
     font-weight: bold;
     font-size: 1.2em;
     user-select: none
- 
 }
 
 #searchfilters li > button
@@ -236,7 +283,9 @@ header h2
 {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap-reverse;
     column-gap: 3em;
+    row-gap: 2em;
     margin-top: 40px;
 }
 
@@ -244,12 +293,17 @@ header h2
 
 #hebergements
 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     background-color: #f2f2f2;
     border-radius: 1.2em;
     padding: 1.2em;
     flex: 3 0 0;
-    position: relative;
+
 }
+
+/* GRID POUR RESIZE LES CARTES OU ESSAYER EN FLEX */
 
 #hebergements h2
 {
@@ -261,10 +315,10 @@ header h2
 #hebergements a[title="afficher plus"]
 {
     font-weight: bold;
-    position: absolute;
     font-size: 1em;
-    bottom: 2em;
     padding-left: 2em;
+    margin-top: 2em;
+    
 }
 
 .hebergflex
@@ -282,28 +336,24 @@ header h2
     background-color: white;
     border: 4px solid white;
     border-radius: 20px;
-    width: 240px;
-    height: 180px;
+    flex: 0 0 28%;
+    height: 200px;
     box-shadow: 5px 5px 5px rgba(203,209,209, 0.6);
-    line-height: 0.4em;
-    overflow: hidden;
+    overflow: hidden; 
 }
 
 .hebergcard img
 {
     object-fit: cover;
     min-height: 0;
-    flex: 1 0 60%;
-}
-
-.hebergcard div
-{ 
-    padding-bottom: 1em;
+    flex: 1 1 60%;
+    margin-bottom: 0.1em;
 }
 
 .hebergcard h3, .hebergcard p, .hebergcard .stars
 {
-    padding-left: 10px;
+    padding-left: 1em;
+    margin: 0.4rem;
 }
 
 .hebergcard h3
@@ -358,6 +408,7 @@ header h2
     flex-wrap: wrap;
     justify-content: space-around;
     row-gap: 2em;
+    column-gap: 1em;
 }
 
 .popcard
@@ -369,8 +420,7 @@ header h2
     height: 140px;
     border: 4px solid white;
     box-shadow: 5px 5px 5px rgba(203,209,209, 0.3);
-
-    overflow: hidden;
+        overflow: hidden;
     position: relative;
 }
 
@@ -386,11 +436,14 @@ header h2
 .popcard h3
 {
     font-size: 1em;
+    margin-bottom: 0.2em;
+
 }
 
 .popcard p
 {
     font-size: 0.9em;
+    margin-top: 0;
 }
 
 .popcard .stars
@@ -422,55 +475,33 @@ header h2
 
 #activites h2
 {
-    font-size: 20px;
+    font-size: 1.2em;
+    margin-bottom: 1.2em;
 }
 
-.actgrid
+.actflex
 {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: space-between;
-    height: 450px;
+    align-content: space-between;
+    column-gap: 1em;
+    row-gap: 1em;
+    height: 28em;
+    max-width: 100%;
 }
 
 .actcard
 {
-    width: 300px;
+    width: 22%;
     display: flex;
     flex-direction: column;
     background-color: white;
     border-radius: 20px;
     box-shadow: 5px 5px 5px rgba(203,209,209, 0.3) ;
-    overflow: hidden;  
-}
+    overflow: hidden;
 
-.actcard:nth-child(1)
-{
-    flex: 0 0 100%;
-}
-
-.actcard:nth-child(2)
-{
-    flex: 0 0 50%;
-}
-
-.actcard:nth-child(3)
-{
-    flex: 0 0 40%;
-}
-
-.actcard:nth-child(4)
-{
-    flex: 0 0 100%;
-}
-.actcard:nth-child(5)
-{
-    flex: 0 0 45%;
-}
-.actcard:nth-child(6)
-{
-    flex: 0 0 45%;
 }
 
 .actcard img
@@ -484,6 +515,7 @@ header h2
 {
     font-size: 1.2em;
     padding-left: 15px;
+    flex: 1 0 1.5em;
 }
 
 .actcard:hover
@@ -506,9 +538,7 @@ footer
     max-width: 1440px;
     margin: auto;
     display: grid;
-    grid-template-columns: 400px 350px 400px;
-    grid-gap: 50px;
-    grid-auto-rows: auto;
+    grid-template-columns: 1fr 1fr 1fr;
     margin-top: 20px;
     padding: 20px 0 20px 0;
 }
@@ -525,31 +555,388 @@ footer h3, footer ul
     font-size: 1em;
 }
 
-/* IMAGES CODES */
 
-.hebergcard i, .popcard i /* Cards Stars Style */
+/* Activity Cards from 769px */
+
+@media (min-width:769px)
 {
-    font-size: 0.75em;
-    padding-left: 1px;
+
+    .actcard:nth-child(1)
+    {
+    flex: 0 0 100%;
+    }
+
+    .actcard:nth-child(2)
+    {
+    flex: 0 0 50%;
+    }
+
+    .actcard:nth-child(3)
+    {
+    flex: 0 0 40%;
+    }
+
+    .actcard:nth-child(4)
+    {
+    flex: 0 0 100%;
+    }
+    .actcard:nth-child(5)
+    {
+    flex: 0 0 45%;
+    }
+    .actcard:nth-child(6)
+    {
+    flex: 0 0 45%;
+    }
+
 }
 
-#logoreservia
+/* 1366 and more */
+
+@media (min-width:1376px)
 {
-    width: 6em;
-    height: 3em;
+    #blocpage
+    {
+    max-width: 1340px;
+    margin: auto;
+    }
 }
 
-i
+/* 1025px to 1366px */
+
+@media (min-width: 1025px) and (max-width:1366px)
 {
-   color: #0065FC;
+    #blocpage
+    {
+    max-width: 95%;
+    margin: auto;
+    }
 }
 
-.igrey
+/* 769px to 1024px */
+
+@media (min-width: 769px) and (max-width:1024px)
 {
-    color: #f2f2f2;
+    #blocpage
+    {
+        width: 90%;
+        margin: auto;
+    }
+
+    #hebergements
+    {
+    padding: 1.2em 0 1.2em 0;
+    max-width: 100%;
+    }
+
+    .popcard
+    {
+    flex-direction: column;
+    flex: 0 0 25%;
+    height: 180px;
+    }
+
+    .popcard img
+    {
+    min-height: 0;
+    flex: 0 0 50%;
+    padding-right: 0;
+    }
+
 }
 
-ul
+/* TABLET SIZE */
+
+@media (min-width:426px) and (max-width: 768px)
 {
-    list-style: none;
+
+    #blocpage
+    {
+        padding-top: 30px;
+       
+    }
+        #pagetop
+    {
+    grid-template-areas: "logo sign"
+                          "nav nav ";
+    grid-template-columns: 1fr 1fr ;
+    grid-template-rows: 1fr 1fr;
+    row-gap: 1.5em;
+    }
+
+    #logoreservia
+    {
+    padding-left: 10%;
+    }
+
+    a[title="hebergements"]
+    {
+    border-top: 0px;
+    border-bottom: 3px solid #0065FC;
+    padding: 1em;
+    width: 50%;    
+    }
+    
+    a[title="activites"]
+    {
+    border-bottom: 3px solid #F2F2F2;
+    padding: 1em;
+    width: 50%;
+    }
+
+
+    #pagetop a[title="sinscrire"]
+    {
+    justify-self:flex-end;
+    align-self: center;
+    padding-right: 10%;
+    }
+
+    header h1, header h2
+    {
+    text-align: center;
+    margin-bottom: 0.5em;
+    }
+
+    #topsearch
+    {
+        width: 95%;
+        margin: 2em auto;
+    }
+    
+    #searchbutton
+    {
+    margin-left: 20%;
+    }
+
+
+    #searchfilters h3, #searchfilters ul, #topsearch p
+    {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;    
+    }
+    
+    #searchfilters li
+    {
+    font-size: 0.8em;
+    }
+
+    #populaires
+    {
+    border-radius: 0;
+    padding-right: 0;
+    }
+
+    .popcard
+    {
+    flex-direction: column;
+    width: 200px;
+    height: 180px;
+    }
+
+    .popcard img
+    {
+    min-height: 0;
+    flex: 0 0 50%;
+    padding-right: 0;
+    }
+
+    .popcard h3, .popcard p, .popcard .stars
+    {
+    padding-left: 1em;
+    }
+
+    #hebergements
+    {
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    }
+
+    .hebergcard
+    {
+    flex: 0 0 40%;
+    }
+
+    #activites
+    {
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    }
+
+    .actflex
+    {
+    flex-direction: row;
+    height: auto;
+    }
+
+    .actcard
+    {
+    flex: 1 1 30%;
+    height: 12em;
+    }
+
+    footer
+    {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+    }  
+
+}
+  
+/* MOBILE SIzE */
+
+@media (max-width: 425px)
+{
+
+    #blocpage
+    {
+    padding-top: 30px;
+    }
+
+
+    #pagetop
+    {
+    grid-template-areas: "logo sign"
+                         "nav nav ";
+    grid-template-columns: 1fr 1fr ;    
+    grid-template-rows: 1fr 1fr;
+    row-gap: 1.5em;    
+    }
+
+    #logoreservia
+    {
+        padding-left: 10%;
+    }
+
+    a[title="hebergements"]
+    {
+    border-top: 0px;
+    border-bottom: 3px solid #0065FC;
+    padding: 1em;
+    width: 50%;  
+    }
+    
+    a[title="activites"]
+    {
+    border-bottom: 3px solid #F2F2F2;
+    padding: 1em;
+    width: 50%;
+    }
+
+
+    #pagetop a[title="sinscrire"]
+    {
+        justify-self:flex-end;
+        align-self: center;
+        padding-right: 10%;
+    }
+
+    header h1, header h2
+    {
+        width: 90%;
+        margin: auto;
+        margin-bottom: 0.5em;
+    }
+
+    #topsearch
+    {
+    width: 90%;
+    margin: 2em auto;
+    }
+
+    #searchbutton button:last-child
+    {
+    width: 50px;
+    border-radius: 1em ;
+    transform: translateX(-15px);
+    }
+
+    #searchbutton .submittext
+    {
+        display: none;
+    }
+
+    #searchbutton .submiticon
+    {
+        display: inline;
+        color: white;
+    }
+
+    #searchfilters li
+    {
+    font-size: 1em;
+    }
+
+    .transbutton
+    {
+    float: left;
+    }
+
+    #populaires
+    {
+    border-radius: 0;
+    padding-left: 0;
+    padding-right: 0;
+    max-width: 100%;
+    }
+
+    #populaires h2
+    {
+    padding-left: 1.2em;
+    }
+
+    .popcard
+    {
+    width: 85%;
+    }
+
+
+    #hebergements
+    {
+    background-color: transparent;
+    max-width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+    }
+
+    #hebergements h2
+    {
+    padding: 0;
+    }
+
+    .hebergcard
+    {
+    flex: 0 0 100%;
+    height: 180px;
+    box-shadow: 0px 0px 20px rgba(203,209,209, 1);
+    }
+
+    #activites
+    {
+    max-width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+    } 
+
+    .actflex
+    {
+    flex-direction: row;
+    height: auto;
+    }
+
+    .actcard
+    {
+    flex: 1 1 100%;
+    height: 10em;
+    }
+
+    footer
+    {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+    }   
+
 }
