@@ -3,8 +3,7 @@
 @font-face {
     font-family: 'Raleway';
     src: url(Font/Raleway/Raleway-VariableFont_wght.ttf); 
-      
-        }
+    }
 
 
 strong
@@ -35,12 +34,12 @@ a
 #logoreservia
 {
     width: 6em;
-    height: 3em;
+    height: 2.8em;
 }
 
 .hebergcard i, .popcard i /* Cards Stars Style */
 {
-    font-size: 0.75em;
+    font-size: 0.7em;
     padding-left: 1px;
 }
 
@@ -59,14 +58,13 @@ ul
     list-style: none;
 }
 
-
-
 /* SECTION CODES */
 
 body
 {
     background-color: white;
-    font-family: 'Raleway';
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
     margin: 0;
 }
 
@@ -75,7 +73,7 @@ body
 header h1
 {
     font-size: 1.4em;
-    margin-bottom: 0.2em;
+    margin-bottom: 0em;
 }
 
 header h2
@@ -88,8 +86,8 @@ header h2
 {
     display: grid;
     grid-template-areas: "logo nothing nav sign";
-    grid-template-columns: 100px 1fr 300px 200px;
-    grid-template-rows: 65px;
+    grid-template-columns: max-content 3fr max-content max-content;
+    grid-template-rows: 90px;
     align-items: end;
     margin-top: 0px;
     margin-bottom: 40px;
@@ -103,36 +101,37 @@ header h2
 #nav
 {
     display: flex;
-    align-items: baseline;
     justify-content: space-between;
     grid-area: nav;
+    align-self: start;
 }
 
 a[title="hebergements"]
 {
     color: #0065FC ;
     border-top: 2px solid #0065FC;
-    padding: 45px 20px 0 20px;
+    padding: 45px 2em 0 2em;
     text-align: center;
     font-weight: normal;
-
 }
 
 a[title="activites"]
 {
-    padding: 45px 20px 0 20px;
+    border-top: 2px solid transparent;
+    padding: 45px 2em 0 2em;
     color: grey;
     text-align: center;
-
 }
 
 #pagetop a[title="sinscrire"]
 {
+    border-top: 2px solid transparent;
     color: #0065FC ;
-
     text-align: center;
     font-weight: bolder;
     grid-area: sign;
+    padding: 45px 2em 0 2em;
+    align-self: flex-start;
 }
 
 #topsearch
@@ -173,6 +172,7 @@ a[title="activites"]
     height: 50px;
     width: 240px;
     border: 1px solid #F2F2F2;
+    padding-left: 2em;
 }
 
 #searchbutton input:focus
@@ -189,14 +189,12 @@ a[title="activites"]
 #searchbutton button:last-child
 {
     color: white;
-    font-weight: bold;
-    font-family: 'raleway';
-    font-size: 1em;
+    font-size: 1.2em;
     background-color: #0065FC;
     height: 50px;
-    width: 120px;
+    width: 140px;
     border: none;
-    border-radius: 0 1em 1em 0;
+    border-radius: 0 0.8em 0.8em 0;
     cursor: pointer;
 }
 
@@ -211,12 +209,12 @@ a[title="activites"]
     display: flex;
     align-items: baseline;
     flex-wrap: wrap;
-
 }
 
 #searchfilters h3
 {
-    margin-right: 40px;
+    margin-right: 2em;
+    margin-bottom: 0;
 }
 
 #searchfilters ul
@@ -225,17 +223,17 @@ a[title="activites"]
     flex-wrap: wrap;
     row-gap: 0.5em;
     column-gap: 1.5em;
-    padding-left: 0px;
+    padding-left: 0;
 }
 
 #searchfilters button
 {
-    margin-right: 10px;
+    margin-right: 0.5em;
     background-color: #DEEBFF;
     border: none;
     border-radius: 2em;
-    width: 50px;
-    height: 50px;
+    width: 45px;
+    height: 45px;
 }
 
 #searchfilters i
@@ -257,7 +255,7 @@ a[title="activites"]
 
 #searchfilters li > button
 {
-    margin: -3px 6px -3px -3px;
+    transform: scale(1.1);
 }
 
 #searchfilters li:hover
@@ -299,24 +297,20 @@ a[title="activites"]
     background-color: #f2f2f2;
     border-radius: 1.2em;
     padding: 1.2em;
-    flex: 3 0 0;
-
+    flex: 2.2 0 0;
 }
-
-/* GRID POUR RESIZE LES CARTES OU ESSAYER EN FLEX */
 
 #hebergements h2
 {
     font-size: 1.4em;
-    padding-left: 1.2em;
+    padding-left: 1em;
 }
-
 
 #hebergements a[title="afficher plus"]
 {
     font-weight: bold;
-    font-size: 1em;
-    padding-left: 2em;
+    font-size: 1.2em;
+    padding-left: 1em;
     margin-top: 2em;
     
 }
@@ -334,7 +328,7 @@ a[title="activites"]
     display: flex;
     flex-direction: column;
     background-color: white;
-    border: 4px solid white;
+    border: 5px solid white;
     border-radius: 20px;
     flex: 0 0 28%;
     height: 200px;
@@ -347,12 +341,17 @@ a[title="activites"]
     object-fit: cover;
     min-height: 0;
     flex: 1 1 60%;
-    margin-bottom: 0.1em;
+    margin-bottom: 0.2em;
+}
+
+.hebergcard div
+{
+    margin-bottom: 0.2em;
+    padding-left: 0.2em;
 }
 
 .hebergcard h3, .hebergcard p, .hebergcard .stars
 {
-    padding-left: 1em;
     margin: 0.4rem;
 }
 
@@ -385,21 +384,23 @@ a[title="activites"]
 {
     background-color: #f2f2f2;
     border-radius: 20px;
-    padding: 20px;
+    padding: 1.2em;
     position: relative;
     flex: 1 0 0;
 }
 
 #populaires h2
 {
-    font-size: 20px;
+    font-size: 1.4em;
+    padding-left: 1em;
 }
 
 #populaires .fa-chart-line
 {
+    font-size: 1.05em;
     color: black;
     position: absolute;
-    right: 30px;
+    right: 2em;
 }
 
 .popflex
@@ -416,11 +417,11 @@ a[title="activites"]
     display: flex;
     background-color: white;
     border-radius: 20px;
-    width: 320px;
-    height: 140px;
-    border: 4px solid white;
+    width: 325px;
+    height: 135px;
+    border: 5px solid white;
     box-shadow: 5px 5px 5px rgba(203,209,209, 0.3);
-        overflow: hidden;
+    overflow: hidden;
     position: relative;
 }
 
@@ -437,7 +438,6 @@ a[title="activites"]
 {
     font-size: 1em;
     margin-bottom: 0.2em;
-
 }
 
 .popcard p
@@ -449,7 +449,7 @@ a[title="activites"]
 .popcard .stars
 {
     position: absolute;
-    bottom: 0;
+    bottom: 0.5em;
 }
 
 .popcard:hover
@@ -470,12 +470,13 @@ a[title="activites"]
 
 #activites
 {
-    margin-top: 40px;
+    margin-top: 4em;
+    margin-bottom: 4%;
 }
 
 #activites h2
 {
-    font-size: 1.2em;
+    font-size: 1.4em;
     margin-bottom: 1.2em;
 }
 
@@ -494,34 +495,43 @@ a[title="activites"]
 
 .actcard
 {
-    width: 22%;
+    width: 22.5%;
     display: flex;
     flex-direction: column;
     background-color: white;
     border-radius: 20px;
     box-shadow: 5px 5px 5px rgba(203,209,209, 0.3) ;
     overflow: hidden;
-
 }
 
 .actcard img
 {
+    flex: 1 1 85%;
+    object-position: 50% 15%;
     object-fit: cover;
     min-height: 0;
-    flex: 1 1 80%;
+}
+
+img[alt="Fort de Pomegues"]
+{
+    object-position: 50% 40%; 
+}
+
+img[alt="Parc National des Calanques"]
+{
+    filter: brightness(130%) contrast(100%) saturate(80%); 
 }
 
 .actcard h3
 {
-    font-size: 1.2em;
-    padding-left: 15px;
-    flex: 1 0 1.5em;
+    font-size: 1em;
+    padding-left: 1.2em;
+    flex: 1 0 1em;
 }
 
 .actcard:hover
 {
     background-color: #DEEBFF;
-
 }
 
 .actcard:hover > img
@@ -538,21 +548,26 @@ footer
     max-width: 1440px;
     margin: auto;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    margin-top: 20px;
-    padding: 20px 0 20px 0;
+    grid-template-columns: 1fr 1fr 1fr 0.2fr;
+    margin-top: 2em;
+    padding: 1.8em 0 1.8em 0;
+}
+
+footer div
+{
+    padding-left: 3em;
 }
 
 footer ul
 {
     padding-left: 0;
-    line-height: 30px;
+    line-height: 2em;
+    font-size: 1em; 
 }
 
-footer h3, footer ul
+footer h3
 {
-    padding: 0 0 0 50px;
-    font-size: 1em;
+    font-size: 1.1em;
 }
 
 
@@ -563,30 +578,31 @@ footer h3, footer ul
 
     .actcard:nth-child(1)
     {
-    flex: 0 0 100%;
+        flex: 0 0 100%;
+
     }
 
     .actcard:nth-child(2)
     {
-    flex: 0 0 50%;
+        flex: 0 0 54%;
     }
 
     .actcard:nth-child(3)
     {
-    flex: 0 0 40%;
+        flex: 0 0 37%;
     }
 
     .actcard:nth-child(4)
-    {
-    flex: 0 0 100%;
+        {
+        flex: 0 0 100%;
     }
     .actcard:nth-child(5)
     {
-    flex: 0 0 45%;
+        flex: 0 0 45%;
     }
     .actcard:nth-child(6)
     {
-    flex: 0 0 45%;
+        flex: 0 0 45%;
     }
 
 }
@@ -597,8 +613,8 @@ footer h3, footer ul
 {
     #blocpage
     {
-    max-width: 1340px;
-    margin: auto;
+        max-width: 1340px;
+        margin: auto;
     }
 }
 
@@ -608,8 +624,8 @@ footer h3, footer ul
 {
     #blocpage
     {
-    max-width: 95%;
-    margin: auto;
+        max-width: 95%;
+        margin: auto;
     }
 }
 
@@ -625,22 +641,22 @@ footer h3, footer ul
 
     #hebergements
     {
-    padding: 1.2em 0 1.2em 0;
-    max-width: 100%;
+        padding: 1.2em 0 1.2em 0;
+        max-width: 100%;
     }
 
     .popcard
     {
-    flex-direction: column;
-    flex: 0 0 25%;
-    height: 180px;
+        flex-direction: column;
+        flex: 0 0 25%;
+        height: 220px;
     }
 
     .popcard img
     {
-    min-height: 0;
-    flex: 0 0 50%;
-    padding-right: 0;
+        min-height: 0;
+        flex: 0 0 50%;
+        padding-right: 0;
     }
 
 }
@@ -653,49 +669,48 @@ footer h3, footer ul
     #blocpage
     {
         padding-top: 30px;
-       
     }
         #pagetop
     {
-    grid-template-areas: "logo sign"
-                          "nav nav ";
-    grid-template-columns: 1fr 1fr ;
-    grid-template-rows: 1fr 1fr;
-    row-gap: 1.5em;
+        grid-template-areas: "logo sign"
+                            "nav nav ";
+        grid-template-columns: 1fr 1fr ;
+        grid-template-rows: 1fr 1fr;
+        row-gap: 1.5em;
     }
 
     #logoreservia
     {
-    padding-left: 10%;
+        padding-left: 10%;
     }
 
     a[title="hebergements"]
     {
-    border-top: 0px;
-    border-bottom: 3px solid #0065FC;
-    padding: 1em;
-    width: 50%;    
+        border-top: 0px;
+        border-bottom: 3px solid #0065FC;
+        padding: 1em;
+        width: 50%;    
     }
     
     a[title="activites"]
     {
-    border-bottom: 3px solid #F2F2F2;
-    padding: 1em;
-    width: 50%;
+        border-bottom: 3px solid #F2F2F2;
+        padding: 1em;
+        width: 50%;
     }
 
 
     #pagetop a[title="sinscrire"]
     {
-    justify-self:flex-end;
-    align-self: center;
-    padding-right: 10%;
+        justify-self:flex-end;
+        align-self: center;
+        padding-right: 10%;
     }
 
     header h1, header h2
     {
-    text-align: center;
-    margin-bottom: 0.5em;
+        text-align: center;
+        margin-bottom: 0.5em;
     }
 
     #topsearch
@@ -706,76 +721,80 @@ footer h3, footer ul
     
     #searchbutton
     {
-    margin-left: 20%;
+        margin-left: 20%;
     }
 
 
     #searchfilters h3, #searchfilters ul, #topsearch p
     {
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;    
+        margin-right: auto;
+        text-align: center;    
     }
     
     #searchfilters li
     {
-    font-size: 0.8em;
+        font-size: 0.8em;
     }
 
     #populaires
     {
-    border-radius: 0;
-    padding-right: 0;
+        border-radius: 0;
+        padding-right: 0;
+    }
+
+    #populaires .fa-chart-line
+    {
+    right: 1em;
     }
 
     .popcard
     {
-    flex-direction: column;
-    width: 200px;
-    height: 180px;
+        flex-direction: column;
+        width: 200px;
+        height: 220px;
     }
 
     .popcard img
     {
-    min-height: 0;
-    flex: 0 0 50%;
-    padding-right: 0;
+        min-height: 0;
+        flex: 0 0 50%;
+        padding-right: 0;
     }
 
     .popcard h3, .popcard p, .popcard .stars
     {
-    padding-left: 1em;
+        padding-left: 1em;
     }
 
     #hebergements
     {
-    max-width: 90%;
-    margin-left: auto;
-    margin-right: auto;
+        max-width: 90%;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .hebergcard
     {
-    flex: 0 0 40%;
+        flex: 0 0 40%;
     }
 
     #activites
     {
-    max-width: 90%;
-    margin-left: auto;
-    margin-right: auto;
+        max-width: 90%;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .actflex
     {
-    flex-direction: row;
-    height: auto;
+        flex-direction: row;
+        height: auto;
     }
 
     .actcard
     {
-    flex: 1 1 30%;
-    height: 12em;
+        flex: 1 1 30%;
+        height: 12em;
     }
 
     footer
@@ -793,65 +812,71 @@ footer h3, footer ul
 
     #blocpage
     {
-    padding-top: 30px;
+        padding-top: 20px;
     }
 
 
     #pagetop
     {
-    grid-template-areas: "logo sign"
-                         "nav nav ";
-    grid-template-columns: 1fr 1fr ;    
-    grid-template-rows: 1fr 1fr;
-    row-gap: 1.5em;    
+        grid-template-areas: "logo sign"
+                            "nav nav ";
+        grid-template-columns: 1fr 1fr ;    
+        grid-template-rows: 1fr 1fr;
+        row-gap: 0.5em;
+        align-items: center;
     }
 
     #logoreservia
     {
-        padding-left: 10%;
+        padding-left: 1.25em;
+    }
+
+    #pagetop
+    {
+        margin-bottom: 1.5em;
     }
 
     a[title="hebergements"]
     {
-    border-top: 0px;
-    border-bottom: 3px solid #0065FC;
-    padding: 1em;
-    width: 50%;  
+        border-top: 0px;
+        border-bottom: 3px solid #0065FC;
+        padding: 1em;
+        width: 50%;  
     }
     
     a[title="activites"]
     {
-    border-bottom: 3px solid #F2F2F2;
-    padding: 1em;
-    width: 50%;
+        border-bottom: 3px solid #F2F2F2;
+        padding: 1em;
+        width: 50%;
     }
 
 
     #pagetop a[title="sinscrire"]
     {
-        justify-self:flex-end;
-        align-self: center;
-        padding-right: 10%;
+        padding: 0 1.25em 0 0;
+        align-self: unset;
+        text-align: right;
+
     }
 
     header h1, header h2
     {
         width: 90%;
-        margin: auto;
-        margin-bottom: 0.5em;
+        margin: 0 auto 0.5em;
     }
 
     #topsearch
     {
-    width: 90%;
-    margin: 2em auto;
+        width: 90%;
+        margin: 2em auto;
     }
 
     #searchbutton button:last-child
     {
-    width: 50px;
-    border-radius: 1em ;
-    transform: translateX(-15px);
+        width: 50px;
+        border-radius: 0.8em ;
+        transform: translateX(-15px);
     }
 
     #searchbutton .submittext
@@ -867,76 +892,107 @@ footer h3, footer ul
 
     #searchfilters li
     {
-    font-size: 1em;
+        font-size: 1em;
     }
 
     .transbutton
     {
-    float: left;
+        float: left;
     }
 
     #populaires
     {
-    border-radius: 0;
-    padding-left: 0;
-    padding-right: 0;
-    max-width: 100%;
+        border-radius: 0;
+        padding-left: 0;
+        padding-right: 0;
+        max-width: 100%;
     }
 
     #populaires h2
     {
-    padding-left: 1.2em;
+        padding-left: 1.2em;
+    }
+
+    #populaires .fa-chart-line
+    {
+    right: 1em;
+    }
+
+    .popflex
+    {
+        row-gap: 1em;
     }
 
     .popcard
     {
-    width: 85%;
+        width: 85%;
     }
 
 
     #hebergements
     {
-    background-color: transparent;
-    max-width: 85%;
-    margin-left: auto;
-    margin-right: auto;
+        background-color: transparent;
+        padding: 0;
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     #hebergements h2
     {
-    padding: 0;
+        padding-left: 1.2em;
+    }
+
+    .hebergflex
+    {
+        row-gap: 1em;
     }
 
     .hebergcard
     {
-    flex: 0 0 100%;
-    height: 180px;
-    box-shadow: 0px 0px 20px rgba(203,209,209, 1);
+        flex: 0 0 85%;
+        height: 180px;
+        box-shadow: 0px 0px 20px rgba(203,209,209, 1);
     }
 
     #activites
     {
-    max-width: 85%;
-    margin-left: auto;
-    margin-right: auto;
+        max-width: 85%;
+        margin-left: auto;
+        margin-right: auto;
     } 
 
     .actflex
     {
-    flex-direction: row;
-    height: auto;
+        flex-direction: row;
+        height: auto;
     }
 
     .actcard
     {
-    flex: 1 1 100%;
-    height: 10em;
+        flex: 1 1 100%;
+        height: 11.2em;
+    }
+
+    img[alt="Fort de Pomegues"]
+    {
+        object-position: 50% 45%;
+    }
+
+    img[alt="Parc Longchamp"]
+    {
+        object-position: 50% 35%;
     }
 
     footer
     {
         grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr 1fr;
-    }   
+        padding-bottom: 0em;
+    }
+
+    footer div
+    {
+        padding-left: 2em;
+    }
 
 }
